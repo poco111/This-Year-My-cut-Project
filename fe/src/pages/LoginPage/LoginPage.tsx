@@ -3,12 +3,12 @@ import * as S from './LoginPageStyle';
 import { Layout, TextInput, Button } from '@components/commons';
 
 export const LoginPage = () => {
-  const IdRef = useRef<HTMLInputElement>(null);
-  const PasswordRef = useRef<HTMLInputElement>(null);
+  const idRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   const onClickLogin = () => {
-    console.log(IdRef?.current?.value);
-    console.log(PasswordRef?.current?.value);
+    console.log(idRef?.current?.value);
+    console.log(passwordRef?.current?.value);
   };
 
   return (
@@ -19,8 +19,8 @@ export const LoginPage = () => {
           <S.ContentsSection>
             <S.ContentDescription>올해 내 컷을 보려면 로그인해주세요.</S.ContentDescription>
             <S.InputSection>
-              <TextInput label="아이디" ref={IdRef} />
-              <TextInput label="패스워드" ref={PasswordRef} type="password" />
+              <TextInput label="아이디" ref={idRef} />
+              <TextInput label="패스워드" ref={passwordRef} type="password" />
             </S.InputSection>
             <Button title="로그인" size="large" onClick={onClickLogin} />
             <S.TermsOfService>
