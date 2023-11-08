@@ -57,7 +57,8 @@ const sizeStyle = css<ButtonStyleProps>`
 export const Button = styled.button<ButtonStyleProps>`
   ${statesStyle}
   ${sizeStyle}
-  border: 8px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
   size: 18px;
 `;
