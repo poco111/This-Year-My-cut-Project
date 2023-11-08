@@ -25,5 +25,4 @@ export const ButtonSection = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  width: 100%;
 `;
