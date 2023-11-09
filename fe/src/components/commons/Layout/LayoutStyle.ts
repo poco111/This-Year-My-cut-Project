@@ -14,6 +14,7 @@ export const Layout = styled.div`
   grid-template-rows: max-content 1fr 0px;
   overflow: hidden;
   outline: rgba(179, 179, 179, 0.39) solid 1px;
+  background-color: #f9f5ed;
 `;
 
 export const Header = styled.div`
@@ -24,16 +25,26 @@ export const Header = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 20px 20px;
-  gap: 20px;
-  background-color: #d9d9d9;
+  gap: 4px;
+  background-color: #f9f5ed;
+`;
+
+export const ButtonSection = styled.button`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 `;
 
 export const HeaderText = styled.div`
   color: #000;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   font-style: normal;
   line-height: 16px;
+  padding-top: 4px;
 `;
 
 export const Contents = styled.div`
