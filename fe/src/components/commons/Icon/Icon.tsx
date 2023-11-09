@@ -4,14 +4,13 @@ import IconComponents from '@assets/icons';
 
 interface IconProps extends IconStyleProps {
   name: string;
-  onClick?: () => void;
 }
 
-export const Icon = ({ name, size, onClick }: IconProps) => {
+export const Icon = ({ name, size }: IconProps) => {
   const IconComponent = IconComponents[name];
 
   return (
-    <S.Icon onClick={onClick} size={size}>
+    <S.Icon size={size}>
       <IconComponent id={name} width={size} height={size} />
     </S.Icon>
   );

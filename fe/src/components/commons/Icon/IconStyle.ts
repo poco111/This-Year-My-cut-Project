@@ -5,9 +5,9 @@ export interface IconStyleProps {
 }
 
 export const Icon = styled.div<IconStyleProps>`
-display:flex;
-justify-content:center;
-align-items:center;
-width: ${({ size }) => size}px;}
-height : ${({ size }) => size}px;
-cursor: pointer;`;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
+`;
