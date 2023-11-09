@@ -6,7 +6,7 @@ export const LoginPage = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 96px 20px 80px 21px;
+  padding: 24px 20px 128px 20px;
 `;
 
 export const TitleSection = styled.div`
@@ -48,4 +48,8 @@ export const TermsOfService = styled.div`
   font-weight: 400;
   line-height: 20px;
   margin-top: 8px;
+`;
+
+export const Link = styled.a`
+  text-decoration: underline;
 `;
