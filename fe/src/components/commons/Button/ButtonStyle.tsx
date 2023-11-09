@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export interface ButtonStyleProps {
-  state?: keyof typeof states;
-  size?: keyof typeof sizes;
+  state: keyof typeof states;
+  size: keyof typeof sizes;
 }
 
 const sizes = {
@@ -11,28 +11,69 @@ const sizes = {
     height: 56px;
   `,
   medium: css`
-    width: 300px;
+    width: 159px;
     height: 56px;
   `,
   small: css`
     width: 159px;
-    height: 56 px;
+    height: 52px;
   `,
 };
 
 const states = {
   default: css`
-    background-color: #d9d9d9;
-    color: #000000;
+    background-color: #221814;
+    color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
   `,
   inactive: css`
-    background-color: #f8fafb;
-    color: #ced3d6;
+    background-color: #ddd7cf;
+    color: #ffffff;
     pointer-events: none;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
   `,
-  reverse: css`
-    background-color: #ffffff;
-    color: #000000;
+  signUp: css`
+    background-color: #fb9b2d;
+    color: #221814;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: normal;
+  `,
+  category: css`
+    background-color: #ddd7cf;
+    color: #847871;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    border-radius: 8px;
+    border: 1px solid #ddd7cf;
+    cursor: pointer;
+  `,
+  selectedCategory: css`
+    background: #221814;
+    color: #fff;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    border-radius: 8px;
+    border: 1px solid #221814;
+    cursor: pointer;
   `,
 };
 
@@ -57,8 +98,4 @@ const sizeStyle = css<ButtonStyleProps>`
 export const Button = styled.button<ButtonStyleProps>`
   ${statesStyle}
   ${sizeStyle}
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  size: 18px;
 `;
