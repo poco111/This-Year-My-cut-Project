@@ -3,18 +3,17 @@ import styled from 'styled-components';
 export const CategoryPage = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 40px 20px 128px 21px;
+  padding: 40px 20px 40px 21px;
 `;
 
 export const TitleSection = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 4px;
-  padding-right: 100px;
+  margin-bottom: 32px;
 `;
 
 export const Title = styled.div`
@@ -42,7 +41,7 @@ export const Description = styled.div`
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
+  line-height: 20px;
 `;
 
 export const HighlightedDescription = styled.div`
@@ -60,6 +59,7 @@ export const CategorySection = styled.div`
   grid-template-rows: repeat(6, 1fr); /* 2행 생성 */
   grid-template-columns: repeat(2, 1fr); /* 6열 생성 */
   gap: 16px; /* 셀 간격 설정 */
+  margin-bottom: 105px;
 `;
 
 export const Category = styled.button`
@@ -70,8 +70,4 @@ export const Category = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
-`;
-
-export const ButtonSection = styled.div`
-  display: flex;
 `;

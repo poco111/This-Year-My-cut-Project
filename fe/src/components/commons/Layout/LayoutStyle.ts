@@ -1,16 +1,17 @@
 import styled from 'styled-components';
+// import ground from '@pages/MyPage/ground.svg';
 
 export const Wrap = styled.div`
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
 `;
 
 export const Layout = styled.div`
   display: grid;
   max-width: 375px;
   width: 100%;
-  height: 100dvh;
-  display: grid;
+  max-height: 812px;
+  height: 100%;
   grid-template-rows: max-content 1fr 0px;
   overflow: hidden;
   outline: rgba(179, 179, 179, 0.39) solid 1px;
@@ -19,12 +20,12 @@ export const Layout = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 64px;
+  height: 56px;
   z-index: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 16px;
   gap: 4px;
   background-color: #f9f5ed;
 `;
@@ -51,5 +52,5 @@ export const Contents = styled.div`
   overflow-x: hidden;
   width: 100%;
   position: relative;
-  height: 100dvh;
+  height: 100%;
 `;

@@ -74,6 +74,9 @@ export const SignUpPage = () => {
       <S.SignUpPage>
         <S.TitleSection>올해 내 컷</S.TitleSection>
         <S.ContentsSection>
+          <S.ContentDescription>
+            회원 가입으로 올해 내 컷을 기록하고, 공유하고, 다시 볼 수 있어요.
+          </S.ContentDescription>
           <S.InputSection>
             <TextInput
               label="아이디"
