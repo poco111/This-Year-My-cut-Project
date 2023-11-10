@@ -12,10 +12,34 @@ export const LoginPage = () => {
     navigate('/');
   };
 
-  const onClickLogin = () => {
-    console.log(idRef?.current?.value);
-    console.log(passwordRef?.current?.value);
+  const onClickLogin = async () => {
+    if (idRef.current && passwordRef.current) {
+      const response = await fetch('http://101.101.211.191:8080/api/user/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: idRef.current.value,
+          password: passwordRef.current.value,
+        }),
+      });
+
+      const result = await response.json();
+
+      console.log(result);
+    }
   };
+
+  // const test = async () => {
+  //   const response = await fetch('http://101.101.211.191:8080/ex01');
+
+  //   const result = await response.json();
+
+  //   console.log(result);
+  // };
+
+  // test();
 
   return (
     <>

@@ -45,9 +45,7 @@ export const CategoryPage = () => {
             />
           ))}
         </S.CategorySection>
-        <S.ButtonSection>
-          <Button title="저장하기" state="default" size="large"></Button>
-        </S.ButtonSection>
+        <Button title="저장하기" state="default" size="large" />
       </S.CategoryPage>
     </Layout>
   );

@@ -3,10 +3,9 @@ import styled from 'styled-components';
 export const LoginPage = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 24px 20px 128px 20px;
+  padding: 24px 20px 58px 20px;
 `;
 
 export const TitleSection = styled.div`
@@ -18,6 +17,7 @@ export const TitleSection = styled.div`
   font-weight: 700;
   font-style: normal;
   line-height: normal;
+  margin-bottom: 265px;
 `;
 
 export const ContentsSection = styled.div`
