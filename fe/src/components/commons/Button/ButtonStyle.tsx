@@ -10,6 +10,10 @@ const sizes = {
     width: 334px;
     height: 56px;
   `,
+  normal: css`
+    width: 300px;
+    height: 56px;
+  `,
   medium: css`
     width: 159px;
     height: 56px;
