@@ -152,6 +152,5 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
       font-family: Pretendard;
-      overflow-y: auto;
     }
 `;
