@@ -3,10 +3,9 @@ import styled from 'styled-components';
 export const SignUpPage = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 24px 20px 128px 20px;
+  padding: 24px 20px 58px 20px;
 `;
 
 export const TitleSection = styled.div`
@@ -18,12 +17,12 @@ export const TitleSection = styled.div`
   font-weight: 700;
   font-style: normal;
   line-height: normal;
+  margin-bottom: 141px;
 `;
 
 export const ContentsSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
 `;
 
 export const ContentDescription = styled.div`
@@ -33,12 +32,14 @@ export const ContentDescription = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
+  margin-bottom: 24px;
 `;
 
 export const InputSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 24px;
 `;
 
 export const TermsOfService = styled.div`
@@ -47,7 +48,7 @@ export const TermsOfService = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  margin-top: 8px;
+  margin-top: 32px;
 `;
 
 export const Link = styled.a`
