@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
+import saveAs from 'file-saver';
 import * as S from './FormPageStyle';
 import { Icon, Button, WriteModal } from '@components/commons';
 
@@ -10,23 +11,17 @@ export const FormPage = () => {
   const CaptureBtnHandler = async () => {
     if (captureRef.current) {
       try {
-        const canvas = await html2canvas(captureRef.current);
-        onSaveAs(canvas.toDataURL('image/png'), 'This-Year-My-Cut.png');
+        const canvas = await html2canvas(captureRef.current, { scale: 2 });
+        canvas.toBlob((blob) => {
+          if (blob) {
+            saveAs(blob, 'This-Year-My-Cut.png');
+          }
+        });
       } catch (error) {
         // error 모달 만들고 error 처리
         console.error('Error capturing the div:', error);
       }
     }
-  };
-
-  const onSaveAs = (uri, filename) => {
-    console.log('onSaveAs');
-    const link = document.createElement('a');
-    document.body.appendChild(link);
-    link.href = uri;
-    link.download = filename;
-    link.click();
-    document.body.removeChild(link);
   };
 
   const writeModalOpenHandler = () => {
