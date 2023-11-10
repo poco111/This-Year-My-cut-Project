@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import ground from '@pages/MyPage/ground.svg';
 
 export const Wrap = styled.div`
   display: grid;
@@ -15,7 +14,6 @@ export const Layout = styled.div`
   grid-template-rows: max-content 1fr 0px;
   outline: rgba(179, 179, 179, 0.39) solid 1px;
   background-color: #f9f5ed;
-  overflow-y: auto;
 `;
 
 export const Header = styled.div`
