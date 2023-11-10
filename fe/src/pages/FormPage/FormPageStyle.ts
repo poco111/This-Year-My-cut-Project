@@ -41,11 +41,12 @@ export const Header = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: fixed;
-  top: 0;
   padding: 16px 20px;
   z-index: 1;
+  position: absolute;
 `;
+// position: fixed;
+// top: 0;
 
 export const HeaderButtonSection = styled.button`
   display: flex;
@@ -153,8 +154,10 @@ export const ButtonSection = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: fixed;
-  top: 700px;
   padding: 16px 20px;
   z-index: 1;
+  position: absolute;
+  top: 700px;
 `;
+// position: fixed;
+// top: 700px;
