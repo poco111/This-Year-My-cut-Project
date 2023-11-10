@@ -13,9 +13,9 @@ export const Layout = styled.div`
   max-height: 812px;
   height: 100%;
   grid-template-rows: max-content 1fr 0px;
-  overflow: hidden;
   outline: rgba(179, 179, 179, 0.39) solid 1px;
   background-color: #f9f5ed;
+  overflow-y: auto;
 `;
 
 export const Header = styled.div`
