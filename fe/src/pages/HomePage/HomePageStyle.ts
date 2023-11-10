@@ -5,7 +5,7 @@ export const HomePage = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding: 80px 20px 80px 21px;
+  padding: 80px 20px 80px 20px;
 `;
 
 export const TitleSection = styled.div`
@@ -17,7 +17,7 @@ export const TitleSection = styled.div`
   font-weight: 700;
   font-style: normal;
   line-height: normal;
-  margin-bottom: 486px;
+  margin-bottom: 485px;
 `;
 
 export const ButtonSection = styled.div`
