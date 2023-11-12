@@ -1,12 +1,14 @@
 import { RouterProvider } from 'react-router-dom';
 import { GlobalStyle } from '@styles/GlobalStyle';
 import { router } from '@constants/routes';
-
+import { UserContextProvider } from '@stores/UserContext';
 const App = () => {
   return (
     <>
       <GlobalStyle />
-      <RouterProvider router={router} />
+      <UserContextProvider>
+        <RouterProvider router={router} />
+      </UserContextProvider>
     </>
   );
 };
