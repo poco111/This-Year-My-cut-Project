@@ -1,6 +1,6 @@
 import { useReducer, useEffect, useState } from 'react';
 import * as S from './SignUpPageStyle';
-import { Layout, TextInput, Button, ErrorModal } from '@components/commons';
+import { Layout, TextInput, Button, AlertModal } from '@components/commons';
 import { formReducer } from '@services/signUp/signUp';
 import { useNavigate } from 'react-router-dom';
 import { signUpUser } from '@services/signUp/signUp';
@@ -145,7 +145,7 @@ export const SignUpPage = () => {
           </S.ContentsSection>
         </S.SignUpPage>
       </Layout>
-      <ErrorModal title="아이디" message="비번" hasCancelBtn={false} buttonName="확인" />
+      <AlertModal title="아이디" message="비번" hasCancelBtn={false} buttonName="확인" />
     </>
   );
 };
