@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ground from '@assets/icons/ground.svg';
 
 export const MyPage = styled.div`
   display: flex;
@@ -13,7 +12,6 @@ export const ScreenShopArea = styled.div`
   width: 375px;
   height: 1300px;
   background-color: #f9f5ed;
-  background-image: url(${ground});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
