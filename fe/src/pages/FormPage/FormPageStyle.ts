@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ground from '@assets/icons/ground.svg';
-import container from '@assets/icons/container.svg';
+import firstBackground from '@assets/images/firstBackground.svg';
+import firstCard from '@assets/images/firstCard.svg';
 
 interface FormPageStyleProps {
   backgroundImg?: string;
@@ -28,7 +28,7 @@ export const FormPage = styled.div`
   flex-direction: column;
   align-items: center;
   height: 812px;
-  background-image: url(${ground});
+  background-image: url(${firstBackground});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
@@ -45,8 +45,6 @@ export const Header = styled.div`
   z-index: 1;
   position: absolute;
 `;
-// position: fixed;
-// top: 0;
 
 export const HeaderButtonSection = styled.button`
   display: flex;
@@ -105,7 +103,7 @@ export const ContentContainer = styled.div`
   height: 235px;
   display: flex;
   flex-direction: column;
-  background-image: url(${container});
+  background-image: url(${firstCard});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
@@ -159,5 +157,3 @@ export const ButtonSection = styled.div`
   position: absolute;
   top: 700px;
 `;
-// position: fixed;
-// top: 700px;
