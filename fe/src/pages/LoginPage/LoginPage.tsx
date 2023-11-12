@@ -1,12 +1,17 @@
-import { useRef } from 'react';
+import { useRef, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './LoginPageStyle';
-import { Layout, TextInput, Button } from '@components/commons';
+import { Layout, TextInput, Button, AlertModal } from '@components/commons';
+import { authenticateUser } from '@services/login/login';
+import { UserDispatchContext } from '@stores/UserContext';
 
 export const LoginPage = () => {
   const idRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const dispatch = useContext(UserDispatchContext);
 
   const backBtnClickHandler = () => {
     navigate('/');
@@ -14,38 +19,28 @@ export const LoginPage = () => {
 
   const onClickLogin = async () => {
     if (idRef.current && passwordRef.current) {
-      const response = await fetch('http://101.101.211.191:8080/api/user/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          id: idRef.current.value,
-          password: passwordRef.current.value,
-        }),
-      });
+      try {
+        const response = await authenticateUser(idRef.current.value, passwordRef.current.value);
 
-      const result = await response.json();
-
-      console.log(result);
+        localStorage.setItem('token', response.token);
+        dispatch && dispatch({ type: 'LOGIN', payload: response.memberInfo });
+        if (!response.hasHistory) {
+          navigate('/blankMyPage');
+        }
+      } catch (error) {
+        console.log(1);
+        setErrorMessage((error as Error).message);
+        setIsErrorModalOpen(true);
+      }
     }
   };
-
-  // const test = async () => {
-  //   const response = await fetch('http://101.101.211.191:8080/ex01');
-
-  //   const result = await response.json();
-
-  //   console.log(result);
-  // };
-
-  // test();
 
   return (
     <>
       <Layout isHeader={true} previousPage="홈으" onClick={backBtnClickHandler}>
         <S.LoginPage>
-          <S.TitleSection>올해 내 컷</S.TitleSection>
+          <S.TitleImg />
+          <S.ProjectLogo />
           <S.ContentsSection>
             <S.ContentDescription>올해 내 컷을 보려면 로그인해주세요.</S.ContentDescription>
             <S.InputSection>
@@ -55,11 +50,19 @@ export const LoginPage = () => {
             <Button title="로그인" size="large" state="default" onClick={onClickLogin} />
             <S.TermsOfService>
               계속 진행하면 올해 내 컷{' '}
-              <S.Link href="https://www.naver.com" target="_blank" rel="noopener noreferrer">
+              <S.Link
+                href="https://thisyearmycutpotential.notion.site/89848fa20ea7407cb0a2888337f52b13?pvs=4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 서비스 이용약관
               </S.Link>{' '}
               및{' '}
-              <S.Link href="https://www.naver.com" target="_blank" rel="noopener noreferrer">
+              <S.Link
+                href="https://thisyearmycutpotential.notion.site/025a2b6f53e34fd5bad14ddf8ac9ddb2?pvs=4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 개인정보처리방침
               </S.Link>{' '}
               동의한 것으로 간주됩니다.
@@ -67,6 +70,9 @@ export const LoginPage = () => {
           </S.ContentsSection>
         </S.LoginPage>
       </Layout>
+      <AlertModal message={errorMessage} openState={[isErrorModalOpen, setIsErrorModalOpen]} />
     </>
   );
 };
+
+// ErrorModal에 에러메시지 전달하기

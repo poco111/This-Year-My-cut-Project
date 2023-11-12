@@ -20,7 +20,6 @@ export const WriteModal = styled.div`
   border-radius: 16px;
   background: #fff;
   padding: 32px 18px 20px 18px;
-  margin: 0 auto;
 `;
 
 export const CloseIcon = styled.div`
@@ -104,7 +103,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const BackDrop = styled.div`
-  position: absolute;
+  position: fixed;
   max-width: 375px;
   width: 100%;
   max-height: 812px;
