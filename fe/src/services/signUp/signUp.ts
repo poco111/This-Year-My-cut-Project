@@ -1,4 +1,5 @@
 import { FormDataState, Action } from '@pages/SignUpPage/SignUpPage';
+import { API_URL } from '@constants/api';
 
 export const checkIdValidity = (id: string): boolean => {
   const regex = /^[a-z0-9_-]{5,20}$/;
@@ -11,7 +12,7 @@ export const checkPasswordValidity = (password: string): boolean => {
 };
 
 export const checkNickNameValidity = (nickName: string): boolean => {
-  const regex = /^[a-zA-Z가-힣0-9]{3,9}$/;
+  const regex = /^[a-z가-힣0-9]{3,9}$/;
   return regex.test(nickName);
 };
 
@@ -43,5 +44,24 @@ export const formReducer = (state: FormDataState, action: Action) => {
       };
     default:
       return state;
+  }
+};
+
+export const signUpUser = async (id: string, password: string, nickName: string) => {
+  try {
+    const response = await fetch(`${API_URL}/user/signUp`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userId: id, userPw: password, nickName: nickName }),
+    });
+
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.message);
+
+    return result;
+  } catch (error) {
+    return error;
   }
 };

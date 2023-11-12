@@ -68,7 +68,7 @@ export const FormPage = () => {
           </S.ButtonSection>
         </S.Layout>
       </S.Wrap>
-      <WriteModal openState={[isModalOpen, setIsModalOpen]}></WriteModal>
+      <WriteModal openState={[isModalOpen, setIsModalOpen]} />
     </>
   );
 };

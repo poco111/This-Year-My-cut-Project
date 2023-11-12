@@ -46,14 +46,14 @@ const states = {
     line-height: normal;
   `,
   signUp: css`
-    background-color: #fb9b2d;
+    background-color: #ffff;
     color: #221814;
     border-radius: 8px;
-    border: none;
     cursor: pointer;
     font-size: 18px;
     font-weight: 700;
     line-height: normal;
+    border: 1px solid #221814;
   `,
   category: css`
     background-color: #ddd7cf;

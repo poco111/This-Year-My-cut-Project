@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import projectLogo from '@assets/images/projectLogo.svg';
+import loginPageLogo from '@assets/images/loginPageLogo.svg';
 
 export const LoginPage = styled.div`
   display: flex;
@@ -8,16 +10,24 @@ export const LoginPage = styled.div`
   padding: 24px 20px 58px 20px;
 `;
 
-export const TitleSection = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: normal;
-  margin-bottom: 265px;
+export const TitleImg = styled.div`
+  background-image: url(${projectLogo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 180px;
+  height: 40px;
+  margin-bottom: 64px;
+`;
+
+export const ProjectLogo = styled.div`
+  background-image: url(${loginPageLogo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 200px;
+  height: 140px;
+  margin-bottom: 60px;
 `;
 
 export const ContentsSection = styled.div`

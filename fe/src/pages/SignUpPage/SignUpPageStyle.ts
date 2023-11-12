@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import projectLogo from '@assets/images/projectLogo.svg';
+import signupPageLogo from '@assets/images/signupPageLogo.svg';
 
 export const SignUpPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding: 24px 20px 58px 20px;
+  padding: 24px 20px 56px 20px;
 `;
 
 export const TitleSection = styled.div`
@@ -18,6 +20,26 @@ export const TitleSection = styled.div`
   font-style: normal;
   line-height: normal;
   margin-bottom: 141px;
+`;
+
+export const TitleImg = styled.div`
+  background-image: url(${projectLogo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 180px;
+  height: 40px;
+  margin-bottom: 30px;
+`;
+
+export const ProjectLogo = styled.div`
+  background-image: url(${signupPageLogo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 262px;
+  height: 82px;
+  margin-bottom: 20px;
 `;
 
 export const ContentsSection = styled.div`

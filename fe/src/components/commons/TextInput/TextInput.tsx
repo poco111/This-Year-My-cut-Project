@@ -6,14 +6,18 @@ interface TextInputProps {
   label: string;
   placeholder?: string;
   value?: string | number;
+  alertText?: boolean | string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ type, label, placeholder, value, onChange }, ref) => {
+  ({ type, label, placeholder, value, alertText, onChange }, ref) => {
     return (
       <S.TextInput>
-        <S.Label>{label}</S.Label>
+        <S.LabelSection>
+          <S.Label>{label}</S.Label>
+          {alertText && <S.AlertText>{alertText}</S.AlertText>}
+        </S.LabelSection>
         <S.Input
           type={type}
           placeholder={placeholder}
